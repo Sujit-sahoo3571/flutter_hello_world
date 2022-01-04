@@ -65,7 +65,8 @@ class Home extends StatelessWidget {
                         ))),
               ],
             ),
-            UserImage()
+            UserImage(),
+            FlightBookingButton()
           ],
         ));
   }
@@ -84,5 +85,46 @@ class UserImage extends StatelessWidget {
     );
 
     return Container(child: image);
+  }
+}
+
+class FlightBookingButton extends StatelessWidget {
+  const FlightBookingButton({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      // padding: EdgeInsets.all(10.0),
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+            padding: EdgeInsets.all(10.0),
+            primary: Color.fromRGBO(0, 255, 25, 0.6),
+            elevation: 6.0,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10))),
+        child: Text(
+          "Book Your Ticket",
+          style: GoogleFonts.robotoMono(
+              textStyle: TextStyle(color: Colors.white, fontSize: 26.0)),
+        ),
+        onPressed: () {
+          AlertMsgBooking(context);
+        },
+      ),
+    );
+  }
+
+  void AlertMsgBooking(BuildContext context) {
+    var alertDialog = AlertDialog(
+        title: Text("Booking Successful!"),
+        content: Text(
+          'Your booking Recorded Successfully ',
+        ));
+
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return alertDialog;
+        });
   }
 }
