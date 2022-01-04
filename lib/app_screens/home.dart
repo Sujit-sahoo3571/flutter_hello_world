@@ -7,17 +7,65 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+        padding: EdgeInsets.all(10.0),
+        // margin: EdgeInsets.only(left: 10.0, top: 10.0),
         alignment: Alignment.center,
         color: Colors.blue,
-        child: Text("FLIGHT",
-            style: GoogleFonts.robotoMono(
-              textStyle: TextStyle(
-                fontSize: 55.0,
-                color: Colors.white,
-                decoration: TextDecoration.none,
-                // fontFamily: 'The_Nautigal',
-                // fontWeight: FontWeight.w300
-              ),
-            )));
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Expanded(
+                    child: Text("ipsum slodre",
+                        style: GoogleFonts.robotoMono(
+                          textStyle: TextStyle(
+                            fontSize: 35.0,
+                            color: Colors.white,
+                            decoration: TextDecoration.none,
+                            // fontFamily: 'The_Nautigal',
+                            // fontWeight: FontWeight.w300
+                          ),
+                        ))),
+                Expanded(
+                    child: Text("lorem inpunsoo ousij insopu sde ",
+                        style: GoogleFonts.robotoMono(
+                          textStyle: TextStyle(
+                            fontSize: 25.0,
+                            color: Colors.white,
+                            decoration: TextDecoration.none,
+                            // fontFamily: 'The_Nautigal',
+                            // fontWeight: FontWeight.w300
+                          ),
+                        ))),
+              ],
+            ),
+            Row(
+              children: [
+                Expanded(
+                    child: Text("lorem Ipsum themo",
+                        style: GoogleFonts.robotoMono(
+                          textStyle: TextStyle(
+                            fontSize: 35.0,
+                            color: Colors.white,
+                            decoration: TextDecoration.none,
+                            // fontFamily: 'The_Nautigal',
+                            // fontWeight: FontWeight.w300
+                          ),
+                        ))),
+                Expanded(
+                    child: Text("lorem ipsum  ",
+                        style: GoogleFonts.robotoMono(
+                          textStyle: TextStyle(
+                            fontSize: 20.0,
+                            color: Colors.white,
+                            decoration: TextDecoration.none,
+                            // fontFamily: 'The_Nautigal',
+                            // fontWeight: FontWeight.w300
+                          ),
+                        ))),
+              ],
+            )
+          ],
+        ));
   }
 }
