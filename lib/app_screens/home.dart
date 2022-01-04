@@ -64,8 +64,25 @@ class Home extends StatelessWidget {
                           ),
                         ))),
               ],
-            )
+            ),
+            UserImage()
           ],
         ));
+  }
+}
+
+class UserImage extends StatelessWidget {
+  const UserImage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    AssetImage assetImage = AssetImage('images/flight.png');
+    Image image = Image(
+      image: assetImage,
+      width: 250.0,
+      height: 250.0,
+    );
+
+    return Container(child: image);
   }
 }
