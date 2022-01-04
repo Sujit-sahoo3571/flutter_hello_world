@@ -107,9 +107,7 @@ class FlightBookingButton extends StatelessWidget {
           style: GoogleFonts.robotoMono(
               textStyle: TextStyle(color: Colors.white, fontSize: 26.0)),
         ),
-        onPressed: () {
-          AlertMsgBooking(context);
-        },
+        onPressed: () => AlertMsgBooking(context),
       ),
     );
   }
@@ -122,9 +120,6 @@ class FlightBookingButton extends StatelessWidget {
         ));
 
     showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return alertDialog;
-        });
+        context: context, builder: (BuildContext context) => alertDialog);
   }
 }
