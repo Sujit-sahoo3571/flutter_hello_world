@@ -1,37 +1,43 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(MaterialApp(
+      title: "StateFul Widget",
+      home: Favourite_cityName(),
+    ));
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class Favourite_cityName extends StatefulWidget {
+  const Favourite_cityName({Key? key}) : super(key: key);
+
+  @override
+  _Favourite_cityNameState createState() => _Favourite_cityNameState();
+}
+
+class _Favourite_cityNameState extends State<Favourite_cityName> {
+  String cityName = "";
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: "List View",
-      home: Scaffold(
-        appBar: AppBar(title: Text("Long List View")),
-        body: getListView(),
-      ),
-    );
+    return Scaffold(
+        appBar: AppBar(
+          title: Text("StateFul Widget"),
+        ),
+        body: Container(
+          margin: EdgeInsets.all(20.0),
+          child: Column(
+            children: [
+              TextField(
+                  style: TextStyle(
+                    fontSize: 28.0,
+                  ),
+                  onChanged: (String name) => setState(() {
+                        cityName = name;
+                      })),
+              Text(
+                "Your City Name $cityName ",
+                style: TextStyle(fontSize: 30.0),
+              )
+            ],
+          ),
+        ));
   }
-}
-
-// list generate
-List<String> generate_list() {
-  var items = List<String>.generate(100, (index) => "Item $index");
-  return items;
-}
-
-// list Builder
-Widget getListView() {
-  var listItems = generate_list();
-  var listView = ListView.builder(
-      itemBuilder: (context, index) => ListTile(
-            leading: Icon(Icons.favorite),
-            title: Text(listItems[index]),
-            onTap: () => debugPrint("${listItems[index]} was clicked "),
-          ));
-  return listView;
 }
