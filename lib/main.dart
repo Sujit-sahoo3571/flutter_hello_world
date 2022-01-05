@@ -11,9 +11,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "List View",
       home: Scaffold(
-        appBar: AppBar(title: Text("Long List View")),
-        body: getListView(),
-      ),
+          appBar: AppBar(title: Text("Long List View")),
+          body: getListView(),
+          floatingActionButton: FloatingActionButton(
+              onPressed: () => debugPrint("Add button pressed !"),
+              tooltip: "one more Item added",
+              child: Icon(Icons.add))),
     );
   }
 }
@@ -31,7 +34,22 @@ Widget getListView() {
       itemBuilder: (context, index) => ListTile(
             leading: Icon(Icons.favorite),
             title: Text(listItems[index]),
-            onTap: () => debugPrint("${listItems[index]} was clicked "),
+            onTap: () => showSnackBar(context, listItems[index]),
           ));
   return listView;
+}
+
+// snack bar
+
+void showSnackBar(BuildContext context, String item) {
+  var snackbar = SnackBar(
+    content: Text("You Tapped $item"),
+    // duration: Duration(seconds: 30),
+    action: SnackBarAction(
+      label: "Undo",
+      onPressed: () => debugPrint("Undo action started "),
+    ),
+  );
+
+  ScaffoldMessenger.of(context).showSnackBar(snackbar);
 }
