@@ -14,7 +14,8 @@ class Favourite_cityName extends StatefulWidget {
 
 class _Favourite_cityNameState extends State<Favourite_cityName> {
   String cityName = "";
-
+  List<String> _currencies = ['Rupees', 'Dollar', 'Pound', 'Yen'];
+  String? _currentItem = "Rupees";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,6 +33,18 @@ class _Favourite_cityNameState extends State<Favourite_cityName> {
                   onChanged: (String name) => setState(() {
                         cityName = name;
                       })),
+              DropdownButton<String>(
+                items: _currencies
+                    .map((String ccurrency) => DropdownMenuItem(
+                        child: Text(ccurrency), value: ccurrency))
+                    .toList(),
+                onChanged: (String? newValueSelected) {
+                  setState(() {
+                    _currentItem = newValueSelected;
+                  });
+                },
+                value: _currentItem,
+              ),
               Text(
                 "Your City Name $cityName ",
                 style: TextStyle(fontSize: 30.0),
@@ -40,4 +53,11 @@ class _Favourite_cityNameState extends State<Favourite_cityName> {
           ),
         ));
   }
+
+  // newvalue function for select currency
+  // void dropdownItemSelected(String newValue) {
+  //   setState(() {
+  //     this._currentItem = newValue;
+  //   });
+  // }
 }
