@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:hello_world/screens/home_page.dart';
+import 'package:hello_world/screens/note_detail.dart';
+import 'package:hello_world/screens/note_list.dart';
 
 void main() => runApp(MaterialApp(
-      title: "Simple Intrest Calculator",
+      title: "Note Keeping v0.1",
       debugShowCheckedModeBanner: false,
-      home: SI_Form(),
-      theme: ThemeData(
-        brightness: Brightness.dark
-    
-      ),
+      home: NoteList(),
+      theme: ThemeData(primarySwatch: Colors.indigo),
     ));
