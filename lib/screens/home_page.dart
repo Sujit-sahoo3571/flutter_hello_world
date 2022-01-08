@@ -105,14 +105,13 @@ class _SI_FormState extends State<SI_Form> {
             }
           },
           decoration: InputDecoration(
-            labelText: label,
-            labelStyle: textStyle,
-            hintText: hint,
-            border:
-                OutlineInputBorder(borderRadius: BorderRadius.circular(5.0)),
-                errorStyle: TextStyle(fontSize: 16.0,
-                color: Colors.yellowAccent)
-          ),
+              labelText: label,
+              labelStyle: textStyle,
+              hintText: hint,
+              border:
+                  OutlineInputBorder(borderRadius: BorderRadius.circular(5.0)),
+              errorStyle:
+                  TextStyle(fontSize: 16.0, color: Colors.yellowAccent)),
           style: textStyle,
         ));
   }

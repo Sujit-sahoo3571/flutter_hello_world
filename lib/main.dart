@@ -5,8 +5,5 @@ void main() => runApp(MaterialApp(
       title: "Simple Intrest Calculator",
       debugShowCheckedModeBanner: false,
       home: SI_Form(),
-      theme: ThemeData(
-        brightness: Brightness.dark
-    
-      ),
+      theme: ThemeData(brightness: Brightness.dark),
     ));
